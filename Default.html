@@ -1,0 +1,41 @@
+<html>
+<header><title>This is title</title></header>
+<body>
+    <script type="text/javascript" src="JavaScript.js"></script>
+
+    <h1>Kelly's Javascript SPFARKLE! (single player farkle)</h1> <br><br>
+
+
+    Debug testing - Die number: <input type="number" id="dies" value="6"/><br /><br />
+
+    Dice left to roll: <p id="Dice Left"></p>
+
+    <p id="Die Results"> Roll Results will be here.</p>
+    Die #1  <input type="checkbox" id="box0" />Die #2 <input type="checkbox" id="box1" /> Die #3  <input type="checkbox" id="box2" /> Die #4  <input type="checkbox" id="box3" /> Die #5  <input type="checkbox" id="box4" /> Die #6  <input type="checkbox" id="box5" />
+    <br />
+    <br />
+    <button id="scorebutton" onclick="scoreme(diceLeft)">Score Selected Dice</button><br /><br />
+    <p id="Score Feedback"></p><br /><br />
+    <h2>BANKED:</h2><p id="Banked Score"></p><br /><br />
+    <h3>SCORE:</h3> <p id="Actual Score"></p>
+
+    <br /><br />
+    <button onclick="getinput(); results = roll(diceLeft); displayresults()">Roll the dice!</button>
+
+    <script>
+        var results = [];
+        var score = 0;
+        var diceLeft = 6;
+        document.getElementById("Dice Left").innerHTML = diceLeft;
+        document.getElementById("scorebutton").disabled = true;
+
+
+        function getinput() {
+            diceLeft = document.getElementById('dies').value
+            document.getElementById("Dice Left").innerHTML = diceLeft; // debug to update our dice left total.
+        }
+
+    </script>
+
+</body>
+</html>
